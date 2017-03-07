@@ -1,4 +1,4 @@
-proteins = {}
+dirproteins = {}
 
 def checkYesNo(prompt):
     answer = input(prompt)
@@ -14,6 +14,7 @@ def createProt(name=''):
     if(name == ''):
         prot = input('What is the name of this protein? ')
     else:
+        proteins['IP3']
         prot = name
 
     if(checkYesNo('Does ' + prot + ' have any downstream targets? (Y/N) ')):
@@ -63,6 +64,12 @@ class Protein:
     def __init__(self, current_state, targets):
         self.__current_state = current_state
         self.__targets = targets
+
+    def getState(self):
+        return self.__current_state
+
+    def getTargets(self):
+        return  self.__targets
 
 def prompt():
     command = input('What command would you like to run? ')
