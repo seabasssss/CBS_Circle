@@ -61,9 +61,13 @@ def addEffectors(prot, target, effect):
 class Protein:
     #proteins have a name, current_state (active or inactive), and a dictionary of
     #targets
-    def __init__(self, current_state, targets):
+    def __init__(self, name, current_state, targets):
+        self.__name=name
         self.__current_state = current_state
         self.__targets = targets
+
+    def getName(self):
+        return self.__name
 
     def getState(self):
         return self.__current_state
